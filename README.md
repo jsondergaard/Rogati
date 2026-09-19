@@ -158,6 +158,6 @@ extends it.
 cd web && pnpm install && pnpm check
 ```
 
-To develop against a consuming site, `scripts/link-rogati.sh` symlinks this
-checkout into it as `web/.rogati`, and the site aliases the three packages to
-`.rogati/web/packages/*/src` in its bundler config.
+`pnpm check` is the typecheck, the tests and the build. To try a change against
+a real site before releasing it, `pnpm -r build` and then `npm link` the built
+package into that site.
