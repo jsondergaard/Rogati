@@ -1,0 +1,91 @@
+{
+  "name": "@jsondergaard/rogati-core",
+  "version": "1.0.0",
+  "description": "Consent decisions for the browser: a synchronous gate that is denied until somebody says otherwise, with adapters for PostHog, Google Consent Mode, Plausible, Fathom and Meta Pixel.",
+  "keywords": [
+    "consent",
+    "cookie",
+    "gdpr",
+    "eprivacy",
+    "analytics",
+    "posthog",
+    "consent-mode"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsondergaard/Rogati.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./posthog": "./src/posthog.ts",
+    "./google-consent-mode": "./src/google-consent-mode.ts",
+    "./script": "./src/script.ts",
+    "./plausible": "./src/plausible.ts",
+    "./fathom": "./src/fathom.ts",
+    "./meta-pixel": "./src/meta-pixel.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "default": "./dist/index.js"
+      },
+      "./posthog": {
+        "types": "./dist/posthog.d.ts",
+        "import": "./dist/posthog.js",
+        "default": "./dist/posthog.js"
+      },
+      "./google-consent-mode": {
+        "types": "./dist/google-consent-mode.d.ts",
+        "import": "./dist/google-consent-mode.js",
+        "default": "./dist/google-consent-mode.js"
+      },
+      "./script": {
+        "types": "./dist/script.d.ts",
+        "import": "./dist/script.js",
+        "default": "./dist/script.js"
+      },
+      "./plausible": {
+        "types": "./dist/plausible.d.ts",
+        "import": "./dist/plausible.js",
+        "default": "./dist/plausible.js"
+      },
+      "./fathom": {
+        "types": "./dist/fathom.d.ts",
+        "import": "./dist/fathom.js",
+        "default": "./dist/fathom.js"
+      },
+      "./meta-pixel": {
+        "types": "./dist/meta-pixel.d.ts",
+        "import": "./dist/meta-pixel.js",
+        "default": "./dist/meta-pixel.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "rogati-typescript-config": "workspace:*",
+    "jsdom": "^26.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

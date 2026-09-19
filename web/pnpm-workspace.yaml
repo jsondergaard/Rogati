@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+
+# Vitest and Vite both pull esbuild, whose install step needs to run.
+allowBuilds:
+  esbuild: true
